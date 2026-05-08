@@ -8,7 +8,22 @@ Modificaciones realizadas:
 """
 
 from random import choice
-from turtle import *
+from turtle import (
+    Turtle,
+    bgcolor,
+    clear,
+    done,
+    dot,
+    goto,
+    hideturtle,
+    listen,
+    onkey,
+    ontimer,
+    setup,
+    tracer,
+    update,
+    up,
+)
 
 from freegames import floor, vector
 
