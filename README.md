@@ -19,3 +19,9 @@ Cambios realizados:
 - el fondo del juego se cambio a negro
 - Se agregaron comentarios y se explicaron funciones y cambios dentro del codigo
 - Fue verificado por PEP8
+
+Nombre Jesús Emiliano Arizmendi Amezola
+Matricula: A01714647
+- Se modifico el la longitud y velocidad de las paletas.
+- Se cambio el idioma de comentarios y variables a español.
+- Fue verificado por PEP8
