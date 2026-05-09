@@ -1,60 +1,48 @@
-"""Pong, classic arcade game.
-
-Exercises
-
-1. Change the colors.
-2. What is the frame rate? Make it faster or slower.
-3. Change the speed of the ball.
-4. Change the size of the paddles.
-5. Change how the ball bounces off walls.
-6. How would you add a computer player?
-6. Add a second ball.
-"""
-
 from random import choice, random
 from turtle import *
 
 from freegames import vector
 
 
-def value():
-    """Randomly generate value between (-5, -3) or (3, 5)."""
+def valor():
+    """Genera un valor aleatorio entre (-5, -3) o (3, 5)."""
     return (3 + random() * 2) * choice([1, -1])
 
 
-ball = vector(0, 0)
-aim = vector(value(), value())
-state = {1: 0, 2: 0}
+pelota = vector(0, 0)
+direccion = vector(valor(), valor())
+estado = {1: 0, 2: 0}
 
 
-def move(player, change):
-    """Move player position by change."""
-    state[player] += change
+def mover(jugador, cambio):
+    """Mueve la posición del jugador según el cambio."""
+    estado[jugador] += cambio
 
 
-def rectangle(x, y, width, height):
-    """Draw rectangle at (x, y) with given width and height."""
+def rectangulo(x, y, ancho, alto):
+    """Dibuja un rectángulo en (x, y) con el ancho y alto dados."""
     up()
     goto(x, y)
     down()
     begin_fill()
-    for count in range(2):
-        forward(width)
+    for paso in range(2):
+        forward(ancho)
         left(90)
-        forward(height)
+        forward(alto)
         left(90)
     end_fill()
 
 
-def draw():
-    """Draw game and move pong ball."""
+def dibujar():
+    """Dibuja el juego y mueve la pelota de pong."""
     clear()
-    rectangle(-200, state[1], 10, 100) #Las paletas son el doble de largas.
-    rectangle(190, state[2], 10, 100)
+    rectangulo(-200, estado[1], 10, 100) # Las paletas son el doble de largas.
+    rectangulo(190, estado[2], 10, 100)
 
-    ball.move(aim)
-    x = ball.x
-    y = ball.y
+   
+    pelota.move(direccion) 
+    x = pelota.x
+    y = pelota.y
 
     up()
     goto(x, y)
@@ -62,36 +50,36 @@ def draw():
     update()
 
     if y < -200 or y > 200:
-        aim.y = -aim.y
+        direccion.y = -direccion.y
 
     if x < -185:
-        low = state[1]
-        high = state[1] + 50
+        inferior = estado[1]
+        superior = estado[1] + 50
 
-        if low <= y <= high:
-            aim.x = -aim.x
+        if inferior <= y <= superior:
+            direccion.x = -direccion.x
         else:
             return
 
     if x > 185:
-        low = state[2]
-        high = state[2] + 50
+        inferior = estado[2]
+        superior = estado[2] + 50
 
-        if low <= y <= high:
-            aim.x = -aim.x
+        if inferior <= y <= superior:
+            direccion.x = -direccion.x
         else:
             return
 
-    ontimer(draw, 50)
+    ontimer(dibujar, 50)
 
 
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 listen()
-onkey(lambda: move(1, 40), 'w') #Las paletas son el doble de rapidas.
-onkey(lambda: move(1, -40), 's')
-onkey(lambda: move(2, 40), 'i')
-onkey(lambda: move(2, -40), 'k')
-draw()
+onkey(lambda: mover(1, 40), 'w') # Las paletas son el doble de rapidas.
+onkey(lambda: mover(1, -40), 's')
+onkey(lambda: mover(2, 40), 'i')
+onkey(lambda: mover(2, -40), 'k')
+dibujar()
 done()
