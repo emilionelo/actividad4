@@ -11,3 +11,11 @@ Cambios realizados:
 - Se agregaron comentarios en español.
 - Se corrigieron errores de PEP8.
 
+Nombre Sebastian Rojas Serrano
+Matricula: A01713465
+Juego: Snake
+Cambios realizados:
+- Se modifico el color de la serpiente a azul
+- el fondo del juego se cambio a negro
+- Se agregaron comentarios y se explicaron funciones y cambios dentro del codigo
+- Fue verificado por PEP8
