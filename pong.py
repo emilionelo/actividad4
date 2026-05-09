@@ -1,5 +1,8 @@
 from random import choice, random
-from turtle import *
+from turtle import (
+    begin_fill, clear, dot, down, done, end_fill, forward, goto,
+    hideturtle, left, listen, onkey, ontimer, setup, tracer, up, update
+)
 
 from freegames import vector
 
@@ -36,11 +39,10 @@ def rectangulo(x, y, ancho, alto):
 def dibujar():
     """Dibuja el juego y mueve la pelota de pong."""
     clear()
-    rectangulo(-200, estado[1], 10, 100) # Las paletas son el doble de largas.
+    rectangulo(-200, estado[1], 10, 100)  # Las paletas son el doble de largas.
     rectangulo(190, estado[2], 10, 100)
 
-   
-    pelota.move(direccion) 
+    pelota.move(direccion)
     x = pelota.x
     y = pelota.y
 
@@ -77,7 +79,7 @@ setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 listen()
-onkey(lambda: mover(1, 40), 'w') # Las paletas son el doble de rapidas.
+onkey(lambda: mover(1, 40), 'w')  # Las paletas son el doble de rapidas.
 onkey(lambda: mover(1, -40), 's')
 onkey(lambda: mover(2, 40), 'i')
 onkey(lambda: mover(2, -40), 'k')
