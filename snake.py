@@ -31,6 +31,7 @@ snake = [vector(10, 0)]
 aim = vector(0, -10)
 
 
+# Changes the snake direction based on keyboard input.
 def change(x, y):
     """Change snake direction."""
     aim.x = x
@@ -42,6 +43,7 @@ def inside(head):
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
+# Moves the snake in the current direction.
 def move():
     """Move snake forward one segment."""
     head = snake[-1].copy()
@@ -65,7 +67,7 @@ def move():
 
     for body in snake:
         square(body.x, body.y, 9, 'black')
-
+# Blue color added to the snake body.
     square(food.x, food.y, 9, 'yellow')
     update()
     ontimer(move, 100)
