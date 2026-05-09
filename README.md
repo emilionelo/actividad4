@@ -22,6 +22,8 @@ Cambios realizados:
 
 Nombre Jesús Emiliano Arizmendi Amezola
 Matricula: A01714647
+Juego: Pong
+Cambios realizados:
 - Se modificó la longitud y velocidad de las paletas.
 - Se cambió el idioma de comentarios y variables a español.
 - Fue verificado por PEP8.
