@@ -49,8 +49,8 @@ def rectangle(x, y, width, height):
 def draw():
     """Draw game and move pong ball."""
     clear()
-    rectangle(-200, state[1], 10, 50)
-    rectangle(190, state[2], 10, 50)
+    rectangle(-200, state[1], 10, 100) #Las paletas son el doble de largas.
+    rectangle(190, state[2], 10, 100)
 
     ball.move(aim)
     x = ball.x
@@ -89,9 +89,9 @@ setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 listen()
-onkey(lambda: move(1, 20), 'w')
-onkey(lambda: move(1, -20), 's')
-onkey(lambda: move(2, 20), 'i')
-onkey(lambda: move(2, -20), 'k')
+onkey(lambda: move(1, 40), 'w') #Las paletas son el doble de rapidas.
+onkey(lambda: move(1, -40), 's')
+onkey(lambda: move(2, 40), 'i')
+onkey(lambda: move(2, -40), 'k')
 draw()
 done()
